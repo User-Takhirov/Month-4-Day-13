@@ -693,10 +693,6 @@ video {
   gap: 20px;
 }
 
-.scroll-auto {
-  scroll-behavior: auto;
-}
-
 .rounded-\[10px\] {
   border-radius: 10px;
 }
@@ -746,6 +742,11 @@ video {
 .bg-red-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
+.bg-red-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 
 .bg-teal-700 {
@@ -862,8 +863,19 @@ button {
   color: white;
   padding: 20px;
   transition: right 0.3s ease;
+  overflow-y: scroll;
 }
 
 .open {
   right: 0;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(251, 42, 42);
+  border-radius: 10px;
+  margin-left: auto;
 }

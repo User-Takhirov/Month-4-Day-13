@@ -1,4 +1,4 @@
-import { Phones, Laptop, SingleProduct } from "./service.js";
+import { Phones, Laptop, SingleProduct, deleteItem } from "./service.js";
 
 const PhonesBlock = document.querySelector(".box");
 const LaptopBlock = document.querySelector(".laptop");
@@ -10,6 +10,7 @@ const Drawer = document.querySelector(".Drawer");
 const DrawerOpen = document.querySelector(".drawer_open");
 const CloseDrawer = document.querySelector(".closeDrawer");
 const LocalDiv = document.querySelector(".DataStorageBlock");
+const delBtn = document.getElementsByClassName("remove_btn");
 
 const Catalog = async () => {
   const data = await Phones();
@@ -115,9 +116,23 @@ const LocalInterface = () => {
               <p class="text-black text-[20px]">Rame: ${
                 item.rame || "No rame"
               }</p>
-              <p class="text-black text-[20px]">Price: ${item.price} Sum</p>
+              <p class="text-black text-[20px] mb-[10px]">Price: ${
+                item.price
+              } Sum</p>
+              <button data-delTitle="phones" class="remove_btn py-[10px] px-[10px] bg-red-700 text-white" data-remove="${
+                item.id
+              }">Remove</button>
             </div> `
     )
     .join("");
 };
 LocalInterface();
+
+Drawer.addEventListener("click", async (e) => {
+  const delItem = e.target.dataset.remove;
+  if (delItem) {
+    await deleteItem(delItem);
+    console.log(await deleteItem(delItem));
+  }
+  LocalInterface();
+});

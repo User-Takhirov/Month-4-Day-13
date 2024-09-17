@@ -29,3 +29,15 @@ export const SingleProduct = async (name, ItemId) => {
     return error.message;
   }
 };
+
+export const deleteItem = async (delItem) => {
+  try {
+    const res = await fetch(`${url}/phones/${delItem}`, {
+      method: "DELETE",
+    });
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    return error.message;
+  }
+};
