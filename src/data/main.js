@@ -2,7 +2,6 @@ import { Phones, Laptop, SingleProduct } from "./service.js";
 
 const PhonesBlock = document.querySelector(".box");
 const LaptopBlock = document.querySelector(".laptop");
-const btns = document.getElementsByClassName("btns");
 const modal = document.querySelector(".modal_section");
 const modalDiv = document.querySelector(".modal_block");
 const ModalClose = document.querySelector(".modal_close");
@@ -81,9 +80,9 @@ const OpenModal = (data) => {
 
 modal.addEventListener("click", async (e) => {
   const ItemId = e.target.dataset.id;
+  const ItemTitle = e.target.dataset.title;
   if (ItemId) {
-    const data = await SingleProduct(e.target.dataset.title, ItemId);
-
+    const data = await SingleProduct(ItemTitle, ItemId);
     OpenModal(data);
   }
 });
@@ -113,7 +112,9 @@ const LocalInterface = () => {
               <img class="mx-auto" src="${item.img}" alt="#" width="150">
               <h2 class="text-black text-[25px]">${item.title}</h2>
               <p class="text-black text-[20px]">Color: ${item.color}</p>
-              <p class="text-black text-[20px]">Rame: ${item.rame}</p>
+              <p class="text-black text-[20px]">Rame: ${
+                item.rame || "No rame"
+              }</p>
               <p class="text-black text-[20px]">Price: ${item.price} Sum</p>
             </div> `
     )
