@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+}
+
+.modal_block {
+  position: fixed;
+  padding: 15px;
+  display: none;
+  height: auto;
+  
+}
+.modal_close {
+  display: none;
+}
+img {
+  width: 266px;
+  height: 266px;
+  border-radius: 20px;
+}
+button {
+  height: 50px;
+  border-radius: 20px;
+}
+.modal_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Drawer {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 350px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease;
+}
+
+.open {
+  right: 0;
+}

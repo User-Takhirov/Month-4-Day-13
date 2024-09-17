@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <div class="Drawer scroll-auto">
+        <button
+          class="closeDrawer py-[10px] rounded-[5px] cursor-pointer bg-red-500 text-white px-[10px]"
+        >
+          Close
+        </button>
+        <div class="DataStorageBlock mt-[15px]">
+        </div>
+       
+      </div>
+      <div class="Btn_block text-right mr-[410px] pt-[25px] pb-[50px]">
+        <button
+          class="drawer_open py-[10px] rounded-[5px] cursor-pointer bg-green-500 text-white px-[10px]"
+          >Open</button
+        >
+      </div>
+    </section>
+    <section class="modal_section relative mb-[100px]">
+      <div class="container">
+        <div
+          class="box grid grid-cols-4 items-center text-center mb-[50px]"
+        ></div>
+        <div
+          class="laptop grid grid-cols-4 gap-[20px] items-center text-center"
+        ></div>
+        <div class="modal_bg relative">
+          <div
+            class="modal_block fixed bg-[#077ec8] w-[20%]  top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] rounded-[20px]"
+          ></div>
+          <button
+            class="modal_close absolute top-[26%] translate-y-[-50%] w-[30px] h-[30px] left-[58%] text-white px-[10px] rounded-[15px] bg-red-600"
+          >
+            X
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="./data/main.js"></script>
+  </body>
+</html>
